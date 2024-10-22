@@ -1,0 +1,17 @@
+name: Check-In South
+
+on:
+  workflow_dispatch:
+  schedule:
+  - cron: "45 2 * * *"
+
+jobs:
+  check-in-south:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - run: pip install requests
+    - env:
+        COOKIE_SOUTH: ${{ secrets.COOKIE_SOUTH }}
+      run: python CheckIn_South.py
