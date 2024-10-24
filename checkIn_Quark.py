@@ -161,7 +161,7 @@ def main():
         TG_BOTTOKEN = os.getenv('TG_BOTTOKEN')
         TG_CHATID = os.getenv('TG_CHATID')
         url = f"https://api.telegram.org/bot{TG_BOTTOKEN}/sendMessage"
-        data = {"chat_id":TG_CHATID,"text":msg}
+        data = {"chat_id":TG_CHATID,"text":"【GitHub Actions】夸克签到失败"}
         requests.post(url=url, json=data)
 
 
