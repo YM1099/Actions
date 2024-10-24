@@ -157,13 +157,12 @@ def main():
         i += 1
 
     print(msg)
-
-    # try:
-    #     send('夸克自动签到', msg)
-    # except Exception as err:
-    #     print('%s\n❌ 错误，请查看运行日志！' % err)
-
-    return msg[:-1]
+    if "签到异常" in msg:
+        TG_BOTTOKEN = os.getenv('TG_BOTTOKEN')
+        TG_CHATID = os.getenv('TG_CHATID')
+        url = f"https://api.telegram.org/bot{TG_BOTTOKEN}/sendMessage"
+        data = {"chat_id":TG_CHATID,"text":msg}
+        requests.post(url=url, json=data)
 
 
 if __name__ == "__main__":
