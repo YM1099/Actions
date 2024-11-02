@@ -1,0 +1,19 @@
+name: Check-In ZodGame
+
+on:
+  workflow_dispatch:
+  schedule:
+  - cron: "15 1 * * *"
+
+jobs:
+  check-in-zodgame:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - run: pip install undetected-chromedriver requests
+    - env:
+        TG_BOTTOKEN: ${{ secrets.TG_BOTTOKEN }}
+        TG_CHATID: ${{ secrets.TG_CHATID }}
+      run: python3 zodgame.py "${{secrets.COOKIE_ZODGAME}}"
+    - uses: gautamkrishnar/keepalive-workflow@master
