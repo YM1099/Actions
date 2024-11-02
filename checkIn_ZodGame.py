@@ -158,7 +158,7 @@ def zodgame(cookie_string):
         return 1
 
     formhash = driver.find_element(By.XPATH, '//input[@name="formhash"]').get_attribute('value')
-    if not zodgame_checkin(driver, formhash) and zodgame_task(driver, formhash):
+    if not (zodgame_checkin(driver, formhash) and zodgame_task(driver, formhash)):
         print("Checkin failed or task failed.")
         return 1
 
