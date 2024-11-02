@@ -7,6 +7,7 @@ https://github.com/y-tai/zodgame_checkin/blob/main/zodgame/zodgame.py
 import io
 import re
 import sys
+import os
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf-8')
 
 import requests
