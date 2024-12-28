@@ -16,4 +16,4 @@ jobs:
         TG_BOTTOKEN: ${{ secrets.TG_BOTTOKEN }}
         TG_CHATID: ${{ secrets.TG_CHATID }}
       run: python3 checkIn_ZodGame.py "${{secrets.COOKIE_ZODGAME}}"
-    - uses: gautamkrishnar/keepalive-workflow@master
+    - uses: gautamkrishnar/keepalive-workflow@v2
