@@ -17,3 +17,4 @@ jobs:
         TG_BOTTOKEN: ${{ secrets.TG_BOTTOKEN }}
         TG_CHATID: ${{ secrets.TG_CHATID }}
       run: python checkIn_Quark.py
+    - uses: gautamkrishnar/keepalive-workflow@v2
